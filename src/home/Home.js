@@ -15,10 +15,10 @@ export default function Home() {
         <Box display="flex" flexDirection="column">
           <Typography variant="h1">60 Cents</Typography>
           <Button variant="contained" color="primary" style={{ margin: 5 }}>
-            Test Button 1
+            Community Event
           </Button>
           <Button variant="contained" color="primary" style={{ margin: 5 }}>
-            Test Button 2
+            Astronomical Facts
           </Button>
         </Box>
       </Box>

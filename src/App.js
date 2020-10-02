@@ -1,6 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Button } from '@material-ui/core';
+import { red } from '@material-ui/core/colors';
+
+const styles = {
+  btn: {
+  }
+}
 
 function App() {
   return (
@@ -21,9 +28,12 @@ function App() {
           Hello i m jinyi is gay 
 
         </a>
+        <Button style={styles.btn}>Hello World</Button>
       </header>
     </div>
   );
 }
+
+
 
 export default App;

@@ -13,24 +13,31 @@ export default function Home() {
         alignItems="center"
       >
         <Box display="flex" flexDirection="column">
-          <Typography variant="h1">60 Cents</Typography>
+          <Typography variant="h1">60 Cents Space Hub</Typography>
+          <Button
+            variant="contained"
+            color="primary"
+            style={{ margin: 5 }}
+          >
+            Community Event ... :)
+          </Button>
+          <Button variant="contained" color="primary" style={{ margin: 5 }}>
+            Astronomical Facts !
+          </Button>
           <Button
             variant="contained"
             color="primary"
             style={{ margin: 5 }}
             onClick={() => {
-              alert("walao go eat shit");
+              alert("Earth is not flat, stop dreaming !!");
             }}
           >
-            Community Event
-          </Button>
-          <Button variant="contained" color="primary" style={{ margin: 5 }}>
-            
+            For Flat Earthers 
           </Button>
         </Box>
       </Box>
       <Box display="flex" p={1}>
-        {"I'm a flexbox container!"}
+        Daily Pluto status updates: Not a planet
       </Box>
     </Box>
   );

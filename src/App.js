@@ -18,7 +18,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Hello123 i m jinyi 
+          Hello i m jinyi is gay 
 
         </a>
       </header>

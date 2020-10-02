@@ -4,32 +4,9 @@ import './App.css';
 import { Button } from '@material-ui/core';
 import { red } from '@material-ui/core/colors';
 
-const styles = {
-  btn: {
-  }
-}
-
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-          <br/>HI
-
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Hello i m jinyi is gay 
-
-        </a>
-        <Button style={styles.btn}>Hello World</Button>
-      </header>
     </div>
   );
 }

@@ -11,24 +11,39 @@ export default function Test() {
 
   const db = firebase.firestore();
   const [data, setData] = useState([]);
-  const [loc, setLoc] = useState({ lng: 5, lat: 34, zoom: 2 });
+  const mapContainerRef = useRef(null);
 
   useEffect(() => {
     db.collection("test").onSnapshot((snapshot) => {
       setData(snapshot.docs.map((doc, idx) => ({ key: idx, ...doc.data() })));
     });
+
+    mapboxgl.accessToken =
+      "pk.eyJ1Ijoic2ltamlueWkiLCJhIjoiY2tmdGZ5azh5MGh0ajJzcXEydGUyYzhhaCJ9.CyiAKk9np2yG6S3TE60joA";
+
+    const map = new mapboxgl.Map({
+      container: mapContainerRef.current,
+      // See style options here: https://docs.mapbox.com/api/maps/#styles
+      style: "mapbox://styles/mapbox/streets-v11",
+      center: [-104.9876, 39.7405],
+      zoom: 12.5,
+    });
+
+    map.addControl(
+      new mapboxgl.GeolocateControl({
+        positionOptions: {
+          enableHighAccuracy: true,
+        },
+        trackUserLocation: true,
+      })
+    );
+
+    // add navigation control (the +/- zoom buttons)
+    map.addControl(new mapboxgl.NavigationControl(), "bottom-right");
+
+    // clean up on unmount
+    return () => map.remove();
   }, []);
-
-  const testMapRef = useRef(null);
-
-  const map = new mapboxgl.Map({
-    container: testMapRef.current,
-    style: "mapbox://styles/mapbox/streets-v11",
-    center: [loc.lng, loc.lat],
-    zoom: loc.zoom,
-  });
-
-  mapboxgl.accessToken = "MAPBOX_ACCESS_TOKEN";
 
   return (
     <>
@@ -36,7 +51,7 @@ export default function Test() {
         href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css"
         rel="stylesheet"
       />
-      <div ref={(el) => (testMapRef = el)}></div>
+      <div className="map-container" ref={mapContainerRef} />
       <ul>
         {data.map((item) => (
           <li key={item.key}>{item.name}</li>

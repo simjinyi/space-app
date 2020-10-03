@@ -24,7 +24,7 @@ export default function Home() {
             Community Event ... :)
           </Button>
           <Button variant="contained" color="primary" style={{ margin: 5 }}>
-            Astronomical Facts !
+            Astronomical Facts wow !
           </Button>
           <Button
             variant="contained"

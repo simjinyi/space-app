@@ -128,26 +128,91 @@ export default function Form() {
 }
 
 
+
+
 function showLocationClick(e)
 {
   e.preventDefault();
     let cityName, countryName;
     cityName = document.getElementById("cityName").value;
     countryName = document.getElementById("countryName").value;
-    console.log(cityName); 
-    console.log(countryName);
-    // jsonpRequest(cityName, countryName);
+    
+    jsonpRequest(cityName, countryName);
 }
 
-/*
+
 function jsonpRequest(city, country)
 {
     let cityName = encodeURIComponent(city);
     let countryName = encodeURIComponent(country);
-    let callbackfn = encodeURIComponent("locationCoordinate")
+    let callbackfn = encodeURIComponent("locationCoordinate");
     let url = "https://www.mapquestapi.com/geocoding/v1/address?key=xcE48MESAYiVSuPU3G4oiYaCnzQIOSGN&location=" + cityName + "," + countryName + "&callback=" + callbackfn;
     let script = document.createElement("script");
     script.src = url;
     document.body.appendChild(script);
 }
-*/
+
+function locationCoordinate(locationArray)
+{
+  let locDetails = locationArray;
+  if(locationArray.results[0].locations[0].adminArea5 != ""){
+    console.log(locationArray);
+    let mapCoordinates = locationArray.results[0].locations[0].displayLatLng;
+    //mapboxgl.accessToken = 'pk.eyJ1IjoiYmxhY2tjb29raWUiLCJhIjoiY2p1MDh1eXdxM2NrNzQ0bGxrenV2aTFuZCJ9.tOWQ1YtOsJxaDruxSrkLnQ';
+
+    let mapCoordinatesArray = [mapCoordinates.lng,mapCoordinates.lat];
+    console.log(mapCoordinates)
+  //   let map = new mapboxgl.Map({
+  //             container: 'map',
+  //             style: 'mapbox://styles/mapbox/streets-v10',
+  //             zoom: 10,
+  //             center: mapCoordinatesArray
+  //         });
+
+  //   let annotation = {
+  //     latLong : mapCoordinatesArray,
+  //     label: locationArray.results[0].locations[0].adminArea5 + ", " + locationArray.results[0].locations[0].adminArea1
+  //   }
+
+  //   let marker = new mapboxgl.Marker({
+  //                 color: "orange"
+  //             });
+  //             marker.setLngLat(annotation.latLong);
+  //             marker.addTo(map);
+
+  //             let popup = new mapboxgl.Popup({
+  //                 offset: 45
+  //             });
+  //             popup.setText(annotation.label);
+  //             marker.setPopup(popup);
+  //             popup.addTo(map);
+
+  //   let generatedAddress = document.getElementById("genAddress");
+  //   let inHtml = "<h5>Generated Address: </h5>"
+  //   if(locationArray.results[0].locations[0].adminArea3 != ""){
+  //   inHtml += "<p>" + locationArray.results[0].locations[0].adminArea5 + ", " + locationArray.results[0].locations[0].adminArea3 + ", " + locationArray.results[0].locations[0].adminArea1 + "</p>";
+  // }
+  // else{
+  //   inHtml += "<p>" + locationArray.results[0].locations[0].adminArea5 + ", " + locationArray.results[0].locations[0].adminArea1 + "</p>";
+  // }
+  //   generatedAddress.innerHTML = inHtml;
+
+  //   let addLocal = document.getElementById("addLoc");
+  //   inHtml = "<button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\" onClick=\"addLocation()\">Add Location</button>"
+  //   addLocal.innerHTML = inHtml;
+
+  // }
+  // else {
+  //   mapboxgl.accessToken = 'pk.eyJ1IjoiYmxhY2tjb29raWUiLCJhIjoiY2p1MDh1eXdxM2NrNzQ0bGxrenV2aTFuZCJ9.tOWQ1YtOsJxaDruxSrkLnQ';
+
+  //   centerCoordinate = [0,0]
+  //   let default_map = new mapboxgl.Map({
+  //           container: 'map',
+  //           style: 'mapbox://styles/mapbox/streets-v10',
+  //           zoom: 0,
+  //           center: centerCoordinate
+  //       });
+
+    window.alert("Invalid Location!")
+  }
+}

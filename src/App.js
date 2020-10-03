@@ -1,10 +1,21 @@
 import React from "react";
 import Home from "./home/Home";
-import Facts from "./facts/Facts";
-import Form from "./form/form";
+import Test from "./events/test";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
-  return <Form />;
+  return (
+    <Router>
+      <Switch>
+        <Route path="/" exact>
+          <Home />
+        </Route>
+        <Route path="/test" exact>
+          <Test />
+        </Route>
+      </Switch>
+    </Router>
+  );
 }
 
 export default App;

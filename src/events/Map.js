@@ -59,7 +59,27 @@ export default function Map() {
           className="map-container"
           ref={mapContainerRef}
         />
-        <Box position="absolute"></Box>
+        <Box
+          position="absolute"
+          style={{
+            height: "100%",
+            overflowY: "scroll",
+            zIndex: 999,
+          }}
+        >
+          <Card style={{ width: 300, height: 300, margin: 20 }}>
+            <p>Testing</p>
+          </Card>
+          <Card style={{ width: 300, height: 300, margin: 20 }}>
+            <p>Testing</p>
+          </Card>
+          <Card style={{ width: 300, height: 300, margin: 20 }}>
+            <p>Testing</p>
+          </Card>
+          <Card style={{ width: 300, height: 300, margin: 20 }}>
+            <p>Testing</p>
+          </Card>
+        </Box>
       </Box>
     </>
   );

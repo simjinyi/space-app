@@ -25,7 +25,7 @@ export default function Home() {
             <Link to="/test">Community Event ... :)</Link>
           </Button>
           <Button variant="contained" color="primary" style={{ margin: 5 }}>
-            Astronomical Facts !
+            Astronomical Facts!
           </Button>
           <Button
             variant="contained"

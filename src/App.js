@@ -85,8 +85,7 @@ export default function App() {
                 <MoreVertIcon />
               </IconButton>
             }
-            title="Shrimp and Chorizo Paella"
-            subheader="September 14, 2016"
+            title={item.name}
           />
           <CardMedia
             className={classes.media}

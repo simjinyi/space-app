@@ -4,7 +4,7 @@ import Facts from "./facts/Facts";
 import Form from "./form/form";
 
 function App() {
-  return <Form/>;
+  return <Form />;
 }
 
 export default App;

@@ -1,6 +1,7 @@
 import { Box, Typography, Button } from "@material-ui/core";
 import React, { useState, useEffect } from "react";
 import "./Home.css";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const [counter, setCounter] = useState(0);
@@ -21,17 +22,17 @@ export default function Home() {
         <Box display="flex" flexDirection="column">
           <Typography variant="h1">60 Cents Space Hub</Typography>
           <Button variant="contained" color="primary" style={{ margin: 5 }}>
-            Community Event ... :)
+            <Link to="/test">Community Event ... :)</Link>
           </Button>
           <Button variant="contained" color="primary" style={{ margin: 5 }}>
-            Astronomical Facts wow !
+            Astronomical Facts !
           </Button>
           <Button
             variant="contained"
             color="primary"
             style={{ margin: 5 }}
             onClick={() => {
-              alert("Earth is not flat, pls dreaming!!");
+              alert("Earth is not flat, stop dreaming!!");
             }}
           >
             For Flat Earthers

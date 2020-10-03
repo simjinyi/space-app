@@ -1,19 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
 import firebase from "firebase";
 import configs from "../configs/dbConfigs";
-import { Button } from "@material-ui/core";
+import { Box, Card } from "@material-ui/core";
 import mapboxgl from "mapbox-gl";
 
-export default function Test() {
+export default function Map() {
   if (!firebase.apps.length) {
     firebase.initializeApp(configs);
   }
 
-  const db = firebase.firestore();
   const [data, setData] = useState([]);
   const mapContainerRef = useRef(null);
 
   useEffect(() => {
+    const db = firebase.firestore();
     db.collection("test").onSnapshot((snapshot) => {
       setData(snapshot.docs.map((doc, idx) => ({ key: idx, ...doc.data() })));
     });
@@ -48,25 +48,19 @@ export default function Test() {
   return (
     <>
       <link
-        href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css"
+        href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css"
         rel="stylesheet"
       />
-      <div className="map-container" ref={mapContainerRef} />
-      <ul>
-        {data.map((item) => (
-          <li key={item.key}>{item.name}</li>
-        ))}
-      </ul>
-      <Button
-        onClick={() => {
-          db.collection("test").add({
-            name: "test",
-            email: "test@test.com",
-          });
-        }}
-      >
-        Click Me!
-      </Button>
+
+      <Box display="flex">
+        <Box
+          display="flex"
+          flex={1}
+          className="map-container"
+          ref={mapContainerRef}
+        />
+        <Box position="absolute"></Box>
+      </Box>
     </>
   );
 }

@@ -15,14 +15,13 @@ export default function Home() {
       <Box
         display="flex"
         flexGrow={1}
-        p={1}
         justifyContent="center"
         alignItems="center"
       >
         <Box display="flex" flexDirection="column">
           <Typography variant="h1">60 Cents Space Hub</Typography>
           <Button variant="contained" color="primary" style={{ margin: 5 }}>
-            <Link to="/test">Community Event ... :)</Link>
+            <Link to="/events">Community Event ... :)</Link>
           </Button>
           <Button variant="contained" color="primary" style={{ margin: 5 }}>
             Astronomical Facts!
@@ -49,9 +48,7 @@ export default function Home() {
           </Button>
         </Box>
       </Box>
-      <Box display="flex" p={1}>
-        Daily Pluto status updates: Not a planet
-      </Box>
+      <Box display="flex">Daily Pluto status updates: Not a planet</Box>
     </Box>
   );
 }

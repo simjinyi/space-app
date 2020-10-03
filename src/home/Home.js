@@ -31,7 +31,7 @@ export default function Home() {
             color="primary"
             style={{ margin: 5 }}
             onClick={() => {
-              alert("Earth is not flat, stop dreaming!!");
+              alert("Earth is not flat, pls dreaming!!");
             }}
           >
             For Flat Earthers

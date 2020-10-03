@@ -2104,7 +2104,7 @@ export default function Test() {
       <Button
         onClick={() => {
           for (let i = 0; i < data.length; i++)
-            db.collection("California").add(data[i]);
+            db.collection("USS").add(data[i]);
         }}
       >
         Click Me!

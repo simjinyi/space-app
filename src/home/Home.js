@@ -1,8 +1,14 @@
 import { Box, Typography, Button } from "@material-ui/core";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Home.css";
 
 export default function Home() {
+  const [counter, setCounter] = useState(0);
+
+  useEffect(() => {
+    document.title = `You clicked ${counter} times!`;
+  });
+
   return (
     <Box display="flex" flexDirection="column">
       <Box
@@ -14,11 +20,7 @@ export default function Home() {
       >
         <Box display="flex" flexDirection="column">
           <Typography variant="h1">60 Cents Space Hub</Typography>
-          <Button
-            variant="contained"
-            color="primary"
-            style={{ margin: 5 }}
-          >
+          <Button variant="contained" color="primary" style={{ margin: 5 }}>
             Community Event ... :)
           </Button>
           <Button variant="contained" color="primary" style={{ margin: 5 }}>
@@ -29,10 +31,20 @@ export default function Home() {
             color="primary"
             style={{ margin: 5 }}
             onClick={() => {
-              alert("Earth is not flat, stop dreaming !!");
+              alert("Earth is not flat, stop dreaming!!");
             }}
           >
-            For Flat Earthers 
+            For Flat Earthers
+          </Button>
+          <Button
+            variant="contained"
+            color="secondary"
+            style={{ margin: 5 }}
+            onClick={() => {
+              setCounter(counter + 1);
+            }}
+          >
+            {counter}
           </Button>
         </Box>
       </Box>

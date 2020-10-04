@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import FilledInput from "@material-ui/core/FilledInput";
 import FormControl from "@material-ui/core/FormControl";
@@ -9,8 +9,6 @@ import OutlinedInput from "@material-ui/core/OutlinedInput";
 import TextField from "@material-ui/core/TextField";
 import MenuItem from "@material-ui/core/MenuItem";
 import Box from "@material-ui/core/Box";
-import axios from "axios";
-import SubmitButton from "./Submit_button";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,40 +18,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ComposedTextField({ onSubmit }) {
+export default function ComposedTextField({ handleChange }) {
   const [title, setTitle] = React.useState("");
   const [description, setDescription] = React.useState("");
   const [operatingHours, setOperatingHours] = React.useState("");
   const [location, setLocation] = React.useState("");
   const classes = useStyles();
 
-  const submit = () => {
-    const ACCESS_TOKEN =
-      "pk.eyJ1Ijoic2ltamlueWkiLCJhIjoiY2tmdGZ5azh5MGh0ajJzcXEydGUyYzhhaCJ9.CyiAKk9np2yG6S3TE60joA";
-
-    axios
-      .get(
-        `https://api.mapbox.com/geocoding/v5/mapbox.places/${location}.json?access_token=${ACCESS_TOKEN}`
-      )
-      .then((res) => {
-        return {
-          title,
-          description,
-          operatingHours,
-          location,
-          coordinate: res.data.features[1].geometry.coordinates,
-        };
-      })
-      .catch((err) => {
-        return {
-          title,
-          description,
-          operatingHours,
-          location,
-          coordinate: null,
-        };
-      });
-  };
+  useEffect(() => {
+    handleChange({ title, description, operatingHours, location });
+  }, [title, description, operatingHours, location]);
 
   return (
     <form className={classes.root} noValidate autoComplete="off">
@@ -134,12 +108,6 @@ export default function ComposedTextField({ onSubmit }) {
           <FormHelperText id="component-helper-text"></FormHelperText>
         </FormControl>
       </Box>
-
-      <SubmitButton
-        onClick={() => {
-          submit();
-        }}
-      />
     </form>
   );
 }

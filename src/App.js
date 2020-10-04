@@ -1,6 +1,7 @@
 import React from "react";
 import Home from "./home/Home";
 import Map from "./events/Map";
+import Facts from "./facts/Facts";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
@@ -22,6 +23,9 @@ function App() {
           </Route>
           <Route path="/events" exact>
             <Map />
+          </Route>
+          <Route path="/facts" exact>
+            <Facts />
           </Route>
         </Switch>
       </Router>

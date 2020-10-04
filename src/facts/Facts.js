@@ -17,6 +17,7 @@ import Snack from "./snackbar";
 import Dialog from "./dialog";
 import Dialog2 from "./dialog2";
 import Dialog3 from "./dialog3";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -140,13 +141,13 @@ export default function ButtonAppBar() {
     
     <AppBar position="static">
       <Toolbar>
-        <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-         <MenuIcon />
-       </IconButton>
+        <Link to="/">
+          <Button color="blue">Back</Button>
+        </Link>
+      
        <Typography variant="h6" className={classes.title}>
           Astronomy Quizzes
         </Typography>
-      <Button color="inherit">Login</Button>
      </Toolbar>
     </AppBar>
 

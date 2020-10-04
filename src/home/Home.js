@@ -43,7 +43,7 @@ export default function Home() {
                 Space Around You
               </Button>
             </Link>
-            <Link to="/events" style={{ textDecoration: "none" }}>
+            <Link to="/facts" style={{ textDecoration: "none" }}>
               <Button
                 variant="contained"
                 color="primary"

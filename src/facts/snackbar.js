@@ -21,7 +21,7 @@ export default function SimpleSnackbar({ answer_2 }) {
 
   return (
     <div>
-      <Button onClick={handleClick}>I want asnwers now!</Button>
+      <Button onClick={handleClick}>I want answers now!</Button>
       <Snackbar
         anchorOrigin={{
           vertical: 'bottom',

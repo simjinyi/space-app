@@ -20,6 +20,7 @@ export default function Map() {
 
   let markers = [];
 
+  const [eventType, setEventType] = useState(0);
   const [data, setData] = useState([]);
   const [inputSearchLocation, setInputSearchLocation] = useState(null);
   const [drawerOpened, setDrawerOpened] = useState(false);
@@ -83,6 +84,134 @@ export default function Map() {
     // clean up on unmount
     return () => map.remove();
   }, [searchState]);
+
+  let someValue = null;
+
+  // if (eventType == 0) {
+  //   someValue = (
+  //     <>
+  //       <form>
+  //         <h1>Interactive</h1>
+  //         <input type="checkbox" id="vehicle1" name="vehicle1" />
+  //         <label for="vehicle1"> Museum</label>
+  //         <br />
+  //         <input type="checkbox" id="vehicle2" name="vehicle2" />
+  //         <label for="vehicle2"> Observatory</label>
+  //         <br />
+  //         <input type="checkbox" id="vehicle3" name="vehicle3" />
+  //         <label for="vehicle3"> Society</label>
+  //         <br />
+  //         <input type="checkbox" id="vehicle3" name="vehicle3" />
+  //         <label for="vehicle3"> Shop</label>
+  //         <br />
+  //         <input type="checkbox" id="vehicle3" name="vehicle3" />
+  //         <label for="vehicle3"> Institution</label>
+  //         <br />
+
+  //         <br />
+  //         <input type="submit" value="Submit" />
+  //       </form>
+  //     </>
+  //   );
+  // } else if (eventType == 1) {
+  //   someValue = (
+  //     <>
+  //       <FormControl component="fieldset">
+  //         <FormLabel component="legend">Event Type</FormLabel>
+  //         <RadioGroup
+  //           aria-label="eventType"
+  //           name="eventType"
+  //           onChange={(event) => {
+  //             setEventType(event.target.value);
+  //           }}
+  //         >
+  //           <FormControlLabel
+  //             value="0"
+  //             control={<Radio />}
+  //             label="Interactive"
+  //           />
+  //           <FormControlLabel
+  //             value="1"
+  //             control={<Radio />}
+  //             label="Information"
+  //           />
+  //           <FormControlLabel value="2" control={<Radio />} label="Events" />
+  //         </RadioGroup>
+  //       </FormControl>
+  //       <form>
+  //         <h1>Type 2</h1>
+  //         <label for="fname">Title:</label>
+  //         <br />
+  //         <input type="text" id="fname" name="fname" />
+  //         <br />
+  //         <label for="lname">Description:</label>
+  //         <br />
+  //         <input type="text" id="lname" name="lname" />
+  //         <br />
+  //         <label for="lname">Time:</label>
+  //         <br />
+  //         <input type="text" id="lname" name="lname" />
+  //         &nbsp; to &nbsp;
+  //         <input type="text" id="lname" name="lname" />
+  //         <br />
+  //         <label for="lname">City:</label>
+  //         <br />
+  //         <input type="text" id="cityName" name="lname" />
+  //         <br />
+  //         <label for="lname">Country:</label>
+  //         <br />
+  //         <input type="text" id="countryName" name="lname" />
+  //         <br />
+  //         <input type="submit" value="Search Location" />
+  //         <br />
+  //         <br />
+  //         <input type="submit" value="Submit" />
+  //       </form>
+  //     </>
+  //   );
+  // } else {
+  //   someValue = (
+  //     <>
+  //       <form>
+  //         <h1>Type 3</h1>
+  //         <label for="fname">Event name:</label>
+  //         <br />
+  //         <input type="text" id="fname" name="fname" />
+  //         <br />
+  //         <label for="lname">Event description:</label>
+  //         <br />
+  //         <input type="text" id="lname" name="lname" />
+  //         <br />
+  //         <label for="lname">Date:</label>
+  //         <br />
+  //         <input type="text" id="lname" name="lname" />
+  //         &nbsp; to &nbsp;
+  //         <input type="text" id="lname" name="lname" />
+  //         <br />
+  //         <label for="lname">Time:</label>
+  //         <br />
+  //         <input type="text" id="lname" name="lname" />
+  //         &nbsp; to &nbsp;
+  //         <input type="text" id="lname" name="lname" />
+  //         <br />
+  //         <label for="fname">Participant number:</label>
+  //         <br />
+  //         <input type="text" id="fname" name="fname" />
+  //         <br />
+  //         <label for="fname">Participation fee:</label>
+  //         <br />
+  //         <input type="text" id="fname" name="fname" />
+  //         <br />
+  //         <label for="fname">Targeted audience:</label>
+  //         <br />
+  //         <input type="text" id="fname" name="fname" />
+  //         <br />
+  //         <br />
+  //         <input type="submit" value="Submit" />
+  //       </form>
+  //     </>
+  //   );
+  // }
 
   return (
     <>
@@ -156,6 +285,7 @@ export default function Map() {
                   Search
                 </Button>
                 <Divider />
+                {someValue}
               </form>
             </Box>
           </Box>

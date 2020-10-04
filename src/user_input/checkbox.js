@@ -19,7 +19,7 @@ const GreenCheckbox = withStyles({
   checked: {},
 })((props) => <Checkbox color="default" {...props} />);
 
-export default function CheckboxLabels() {
+export default function CheckboxLabels({ handleChange }) {
   const [state, setState] = React.useState({
     Musuem: false,
     Observatory: false,
@@ -28,9 +28,9 @@ export default function CheckboxLabels() {
     Institution: false,
   });
 
-  const handleChange = (event) => {
+  const handleChange1 = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
-    console.log(state);
+    handleChange(state);
   };
 
   return (
@@ -41,7 +41,7 @@ export default function CheckboxLabels() {
             icon={<FavoriteBorder />}
             checkedIcon={<Favorite />}
             name="Musuem"
-            onSelect={handleChange}
+            onChange={handleChange1}
           />
         }
         label="Museum"
@@ -53,7 +53,7 @@ export default function CheckboxLabels() {
             icon={<FavoriteBorder />}
             checkedIcon={<Favorite />}
             name="Observatory"
-            onSelect={handleChange}
+            onChange={handleChange1}
           />
         }
         label="Observatory"
@@ -64,7 +64,7 @@ export default function CheckboxLabels() {
             icon={<FavoriteBorder />}
             checkedIcon={<Favorite />}
             name="Society"
-            onSelect={handleChange}
+            onChange={handleChange1}
           />
         }
         label="Society"
@@ -76,7 +76,7 @@ export default function CheckboxLabels() {
             icon={<FavoriteBorder />}
             checkedIcon={<Favorite />}
             name="Shop"
-            onSelect={handleChange}
+            onChange={handleChange1}
           />
         }
         label="Shop"
@@ -87,7 +87,7 @@ export default function CheckboxLabels() {
             icon={<FavoriteBorder />}
             checkedIcon={<Favorite />}
             name="Institution"
-            onSelect={handleChange}
+            onChange={handleChange1}
           />
         }
         label="Institution"

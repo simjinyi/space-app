@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import FilledInput from "@material-ui/core/FilledInput";
 import FormControl from "@material-ui/core/FormControl";
@@ -18,13 +18,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ComposedTextField() {
-  const [name, setName] = React.useState("");
+export default function ComposedTextField({ handleChange }) {
+  const [title, setTitle] = React.useState("");
+  const [description, setDescription] = React.useState("");
+  const [host, setHost] = React.useState("");
+  const [eventType, setEventType] = React.useState("");
+  const [eventTime, setEventTime] = React.useState("");
+  const [location, setLocation] = React.useState("");
   const classes = useStyles();
 
-  const handleChange = (event) => {
-    setName(event.target.value);
-  };
+  useEffect(() => {
+    handleChange({ title, description, host, eventType, eventTime, location });
+  }, [title, description, host, eventType, eventTime, location]);
 
   return (
     <form className={classes.root} noValidate autoComplete="off">
@@ -32,9 +37,7 @@ export default function ComposedTextField() {
         <FormControl fullWidth>
           <InputLabel htmlFor="component-helper">Event Title</InputLabel>
           <Input
-            id="component-helper"
-            value={name}
-            onChange={handleChange}
+            onChange={(e) => setTitle(e.target.value)}
             aria-describedby="component-helper-text"
           />
           <FormHelperText id="component-helper-text"></FormHelperText>
@@ -45,9 +48,7 @@ export default function ComposedTextField() {
         <FormControl fullWidth>
           <InputLabel htmlFor="component-helper">Event Description</InputLabel>
           <Input
-            id="component-helper"
-            value={name}
-            onChange={handleChange}
+            onChange={(e) => setDescription(e.target.value)}
             aria-describedby="component-helper-text"
           />
           <FormHelperText id="component-helper-text">
@@ -59,9 +60,7 @@ export default function ComposedTextField() {
         <FormControl fullWidth>
           <InputLabel htmlFor="component-helper">Hosted by</InputLabel>
           <Input
-            id="component-helper"
-            value={name}
-            onChange={handleChange}
+            onChange={(e) => setHost(e.target.value)}
             aria-describedby="component-helper-text"
           />
           <FormHelperText id="component-helper-text">
@@ -74,9 +73,7 @@ export default function ComposedTextField() {
         <FormControl fullWidth>
           <InputLabel htmlFor="component-helper">Event Type</InputLabel>
           <Input
-            id="component-helper"
-            value={name}
-            onChange={handleChange}
+            onChange={(e) => setEventType(e.target.value)}
             aria-describedby="component-helper-text"
           />
           <FormHelperText id="component-helper-text">
@@ -88,9 +85,7 @@ export default function ComposedTextField() {
         <FormControl fullWidth>
           <InputLabel htmlFor="component-helper">Event Time</InputLabel>
           <Input
-            id="component-helper"
-            value={name}
-            onChange={handleChange}
+            onChange={(e) => setEventTime(e.target.value)}
             aria-describedby="component-helper-text"
           />
           <FormHelperText id="component-helper-text"></FormHelperText>
@@ -101,9 +96,7 @@ export default function ComposedTextField() {
         <FormControl fullWidth>
           <InputLabel htmlFor="component-helper">Event Location</InputLabel>
           <Input
-            id="component-helper"
-            value={name}
-            onChange={handleChange}
+            onChange={(e) => setLocation(e.target.value)}
             aria-describedby="component-helper-text"
           />
           <FormHelperText id="component-helper-text"></FormHelperText>

@@ -81,6 +81,10 @@ export default function ButtonAppBar() {
        amount_state = 0; 
      }
     } 
+    else 
+    {
+      amount_state = 2; 
+    }
 
     if (state == title[num].State)
       {
@@ -91,22 +95,33 @@ export default function ButtonAppBar() {
        state_state = 0; 
      }
 
-    if ((state_state == 1) && (amount_state == 1))
-    {
-      variable = "Well Done!, You have gain 5 glory! ";
-    }
-    else if ((state_state == 1) && (amount_state == 0))
-    {
-      variable = " The state is right but the amount is wrong.";
-    }
-    else if ((state_state == 0) && (amount_state == 1))
-    {
-      variable = " The state is wrong but the amount is right.";
-    }
-    else 
-    {
-      variable = "All wrong! Too bad try again";
-    }
+     if ((state_state == 1) && (amount_state == 2))
+     {
+      variable = "The answer for state is right, however, the amount awarded for that project is USD 0. ";
+     }
+     else if ((state_state == 0) && (amount_state == 2))
+     {
+      variable = "The answer for state is wrong, the amount awarded for that project is USD 0. ";
+     }
+     else 
+     {
+       if ((state_state == 1) && (amount_state == 1))
+        {
+          variable = "Well Done!, You have gain 5 glory! ";
+       }
+       else if ((state_state == 1) && (amount_state == 0))
+        {
+           variable = " The state is right but the amount is wrong.";
+       }
+        else if ((state_state == 0) && (amount_state == 1))
+       {
+         variable = " The state is wrong but the amount is right.";
+       }
+       else 
+       {
+          variable = "All wrong! Too bad try again";
+       }
+     }
 
   return (
     
@@ -137,7 +152,7 @@ export default function ButtonAppBar() {
       <h3><p>Guess the award amount !! (within 10% error)</p></h3>
       <Dialog2/>
       <p> What is the award amount for {title[num].proposalTitle} ? </p>
-      <p> {title[num].State}</p>
+      <p> {title[num].State + " , " + title[num].awardAmount}</p>
 
       
       

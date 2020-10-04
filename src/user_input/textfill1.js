@@ -34,48 +34,61 @@ export default function ComposedTextField() {
 
       <FormControl>
 
-        <InputLabel htmlFor="component-helper">Blank1</InputLabel>
+        <InputLabel htmlFor="component-helper">Event Title</InputLabel>
         <Input
           id="component-helper"
           value={name}
           onChange={handleChange}
           aria-describedby="component-helper-text"
         />
-        <FormHelperText id="component-helper-text">Where is the lamb sauce?</FormHelperText>
+        <FormHelperText id="component-helper-text"></FormHelperText>
       </FormControl>
     </Box>
 
     <Box display = "flex" flexdirection = "column">
       <FormControl>
 
-        <InputLabel htmlFor="component-helper">Title</InputLabel>
+        <InputLabel htmlFor="component-helper">Event Description</InputLabel>
         <Input
             id="component-helper"
             value={name}
             onChange={handleChange}
             aria-describedby="component-helper-text"
         />
-        <FormHelperText id="component-helper-text"></FormHelperText>
+        <FormHelperText id="component-helper-text">Tell people what your event is and why you are holding this event!</FormHelperText>
        </FormControl>
        </Box>
       <Box display = "flex" flexdirection = "column">
       <FormControl>
 
-        <InputLabel htmlFor="component-helper">Description</InputLabel>
+        <InputLabel htmlFor="component-helper">Hosted by</InputLabel>
         <Input
             id="component-helper"
             value={name}
             onChange={handleChange}
             aria-describedby="component-helper-text"
         />
-        <FormHelperText id="component-helper-text">Tell people more about it!</FormHelperText>
+        <FormHelperText id="component-helper-text">Describe a little about youself!</FormHelperText>
        </FormControl>
        </Box>
 
       <Box display = "flex" flexdirection = "column">
       <FormControl>
 
-        <InputLabel htmlFor="component-helper">Operating/Opening hours</InputLabel>
+        <InputLabel htmlFor="component-helper">Event Type</InputLabel>
+        <Input
+            id="component-helper"
+            value={name}
+            onChange={handleChange}
+            aria-describedby="component-helper-text"
+        />
+        <FormHelperText id="component-helper-text">Public/Private/Who can join etc</FormHelperText>
+       </FormControl>
+       </Box>
+       <Box display = "flex" flexdirection = "column">
+      <FormControl>
+
+        <InputLabel htmlFor="component-helper">Event Time</InputLabel>
         <Input
             id="component-helper"
             value={name}
@@ -87,9 +100,9 @@ export default function ComposedTextField() {
        </Box>
 
        <Box display = "flex" flexdirection = "column">
-       <FormControl>
+      <FormControl>
 
-        <InputLabel htmlFor="component-helper">Location</InputLabel>
+        <InputLabel htmlFor="component-helper">Event Location</InputLabel>
         <Input
             id="component-helper"
             value={name}

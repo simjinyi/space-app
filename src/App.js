@@ -25,6 +25,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import clsx from "clsx";
 import Textfill from "./user_input/textfill"; 
+import Textfill1 from "./user_input/textfill1"; 
 import Checkbox from "./user_input/checkbox"; 
 import Radio from "./user_input/radio"; 
 import Submit_button from "./user_input/Submit_button"; 
@@ -170,13 +171,17 @@ export default function App() {
           </Route>
         </Switch>
       </Router>
+    
     <Radio />
-    <Submit_button />
-    <Textfill />
     <Submit_button />
     <Checkbox />
     <Submit_button />
-
+    <Textfill />
+    <Submit_button />
+    <Textfill />
+    <Submit_button />
+    <Textfill1 />
+    <Submit_button />
     </>
   );
 }

@@ -26,6 +26,7 @@ export default function CheckboxLabels() {
     checkedB: false,
     checkedC: false,
     checkedD: false,
+    checkedE: false, 
   });
 
   const handleChange = (event) => {
@@ -36,21 +37,25 @@ export default function CheckboxLabels() {
     <FormGroup column>
 <FormControlLabel
         control={<Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} name="checkedA" />}
-        label="Custom icon1"
+        label="Museum"
       />
 
        <FormControlLabel
         control={<Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} name="checkedB" />}
-        label="Custom icon2"
+        label="Observatory"
       />
       <FormControlLabel
         control={<Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} name="checkedC" />}
-        label="Custom icon3"
+        label="Society"
       />
 
        <FormControlLabel
         control={<Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} name="checkedD" />}
-        label="Custom icon4"
+        label="Shop"
+      />
+       <FormControlLabel
+        control={<Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} name="checkedE" />}
+        label="Institution"
       />
     </FormGroup>
   );

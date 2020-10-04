@@ -24,6 +24,10 @@ import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import clsx from "clsx";
+import Textfill from "./user_input/textfill"; 
+import Checkbox from "./user_input/checkbox"; 
+import Radio from "./user_input/radio"; 
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -165,6 +169,9 @@ export default function App() {
           </Route>
         </Switch>
       </Router>
+    <Textfill />
+    <Checkbox />
+    <Radio />
     </>
   );
 }

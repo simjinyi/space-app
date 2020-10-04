@@ -153,7 +153,6 @@ export default function ButtonAppBar() {
       <h3><p>Guess the award amount !!</p></h3>
       <Dialog2/>
       <p> What is the award amount for {title[num].proposalTitle} ? </p>
-      <p> {title[num].State + " , " + title[num].awardAmount}</p>
 
       
       

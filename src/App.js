@@ -169,9 +169,10 @@ export default function App() {
           </Route>
         </Switch>
       </Router>
+    <Radio />
     <Textfill />
     <Checkbox />
-    <Radio />
+
     </>
   );
 }

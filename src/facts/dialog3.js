@@ -49,7 +49,7 @@ const DialogActions = withStyles((theme) => ({
   },
 }))(MuiDialogActions);
 
-export default function CustomizedDialogs() {
+export default function CustomizedDialogs({info}) {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -62,24 +62,36 @@ export default function CustomizedDialogs() {
   return (
     <div>
       <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        Instructions and warnings
+        Trivial information
       </Button>
       <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
         <DialogTitle id="customized-dialog-title" onClose={handleClose}>
-          Fellow challengers: 
+          The more you know: 
         </DialogTitle>
         <DialogContent dividers>
-          <Typography gutterBottom>
-            This is a quiz to test your understanding of past astronomical projects in US. Your quests are to determine the range of amount awarded for the given project and which US state is it in. 
-            This quiz maybe hard for some users, please remain calm when answering the quiz. 
+
+         <Typography gutterBottom>
+          {"The project proposal number is " + info.proposalNumber + "."} 
           </Typography>
           <Typography gutterBottom>
-            The the lower limit of your answer must be higher than 90% of the answer and the upper limit must be lower than 110%.
-            Good luck and have fun !!!
+          {"The project is in " + info.Phase + "."}
           </Typography>
           <Typography gutterBottom>
-            Good luck and have fun !!!
+          {"The project center is " + info.Center + "."}
           </Typography>
+          <Typography gutterBottom>
+          {"The project Mission Directorate is " + info.missionDirectorate + "."}
+          </Typography>
+          <Typography gutterBottom>
+          {"The project is handled by" + info.Firm }
+          </Typography>
+          <Typography gutterBottom>
+          {"The project business official is " + info.businessOfficial + "."} 
+          </Typography>
+          <Typography gutterBottom>
+          {"For more info please email " + info.Email + "."} 
+          </Typography>
+
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleClose} color="primary">

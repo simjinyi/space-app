@@ -27,6 +27,7 @@ import clsx from "clsx";
 import Textfill from "./user_input/textfill"; 
 import Checkbox from "./user_input/checkbox"; 
 import Radio from "./user_input/radio"; 
+import Submit_button from "./user_input/Submit_button"; 
 
 
 const useStyles = makeStyles((theme) => ({
@@ -170,8 +171,11 @@ export default function App() {
         </Switch>
       </Router>
     <Radio />
+    <Submit_button />
     <Textfill />
+    <Submit_button />
     <Checkbox />
+    <Submit_button />
 
     </>
   );
